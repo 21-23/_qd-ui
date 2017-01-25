@@ -1,6 +1,6 @@
 const defaultState = {
     displayName: 'Player',
-    iconCharCode: '&#xf007;',
+    iconCharCode: '\uf007',
 };
 
 export default function userPanel(state = defaultState, action) {
