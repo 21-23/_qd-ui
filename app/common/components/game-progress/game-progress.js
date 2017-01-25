@@ -19,7 +19,7 @@ function getMarkText(index, currentRoundIndex) {
         return '\uf00c';
     }
 
-    return (index + 1);
+    return index + 1;
 }
 
 function getProgressFactor(currentRoundIndex, totalRounds) {
@@ -28,10 +28,10 @@ function getProgressFactor(currentRoundIndex, totalRounds) {
 
 // TODO: split into several sub-components for faster re-rendering
 export default function GameProgress({ rounds, currentRoundIndex }) {
-    const marks = [];
-
-    rounds.forEach((round, index) => {
-        marks.push(<div className={getMarkClass(index, currentRoundIndex)}>{getMarkText(index, currentRoundIndex)}</div>);
+    const marks = rounds.map((round, index) => {
+        return(
+            <div className={getMarkClass(index, currentRoundIndex)}>{getMarkText(index, currentRoundIndex)}</div>
+        );
     });
 
     return (
