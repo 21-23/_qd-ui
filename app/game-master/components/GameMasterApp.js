@@ -42,19 +42,21 @@ class GameMasterApp extends Component {
 
         return (
             <div className="game-master-view">
-                <UserPanel displayName={participant.displayName} role={participant.role}/>
+                <UserPanel displayName={participant.displayName} role={participant.role} />
                 <div className="view-content">
-                    <GameProgress rounds={puzzles} currentRoundIndex={currentRoundIndex}
+                    <GameProgress rounds={puzzles}
+                                  currentRoundIndex={currentRoundIndex}
                                   selectedRoundIndex={selectedRoundIndex}
-                                  onSelect={bindActionCreators(selectRound, dispatch)}/>
+                                  onSelect={bindActionCreators(selectRound, dispatch)}
+                    />
                     <div className="main-content">
-                        <TaskColumn round={currentRound}/>
+                        <TaskColumn round={currentRound} />
                         <div className={getScoresClasses(visibleScore)}>
-                            <RoundScore score={roundScore}/>
-                            <AggregateScore score={aggregateScore}/>
+                            <RoundScore score={roundScore} />
+                            <AggregateScore score={aggregateScore} />
                         </div>
                     </div>
-                    <ScoreViewSwitcher visibleScore={visibleScore}/>
+                    <ScoreViewSwitcher visibleScore={visibleScore} />
                 </div>
                 {overlay}
             </div>

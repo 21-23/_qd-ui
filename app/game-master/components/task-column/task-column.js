@@ -34,7 +34,7 @@ export default class TaskColumn extends Component {
                         <div className="round-name">{name}</div>
                         <GameControls />
                     </div>
-                    <Timer radius={40} strokeWidth={5} value={remaining} maxValue={duration}  />
+                    <Timer radius={40} strokeWidth={5} value={remaining} maxValue={duration} />
                 </div>
                 {taskPlaceholder}
             </div>
