@@ -1,6 +1,6 @@
 import createPhoenix from 'phoenix';
 import messageFactory from 'message-factory'; // TODO: no need in the whole module
-import { error, warn, log, initSteno } from 'steno';
+import { error, warn, log } from 'steno';
 
 import config from '../config.json';
 import { buildEndpointUri } from 'common/utils/connection';
