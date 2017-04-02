@@ -9,13 +9,14 @@ import { verifySolution } from '../../action-creators/round';
 import './game-input.styl';
 
 class GameInput extends Component {
-    render({ result, playerInput, currentRoundIndex, verifySolution }) {
+    render({ result, playerInput, currentRoundIndex, verifySolution, correct }) {
         return (
             <div className="game-input">
                 <CodeEditor
                     onChange={verifySolution}
                     playerInput={playerInput}
                     currentRoundIndex={currentRoundIndex}
+                    isReadOnly={correct}
                 />
                 <div className="separator"></div>
                 <CodeBox value={result} />
@@ -29,6 +30,7 @@ export default connect((state) => {
         result: state.currentRound.solutionResult,
         playerInput: state.currentRound.playerInput,
         currentRoundIndex: state.session.currentRoundIndex,
+        correct: state.currentRound.correct,
     };
 }, {
     verifySolution,
