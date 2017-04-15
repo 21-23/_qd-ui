@@ -1,8 +1,8 @@
 import { SESSION_STATE } from '../actions/session';
 
 const defaultState = {
-    displayName: 'Game Master',
-    role: 'game-master',
+    displayName: '', // Game Master
+    role: 'game-master', // role can't be changed (at least now)
 };
 
 function updateParticipantInfo(state, participant) {

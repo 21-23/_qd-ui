@@ -3,8 +3,6 @@ import { error } from 'steno';
 import * as RoundActions from '../actions/round';
 import { SESSION_STATE } from '../actions/session';
 
-import MockData from '../mock-data/current-round';
-
 const RoundPhase = {
     IDLE: 'idle',
     COUNTDOWN: 'countdown',
@@ -12,7 +10,15 @@ const RoundPhase = {
     END: 'end'
 };
 
-const defaultState = MockData;
+const defaultState = {
+    name: '',
+    duration: 0,
+    remaining: 0,
+    input: '',
+    expected: '',
+    phase: RoundPhase.IDLE,
+    countdownRemaining: 0,
+};
 
 function updateRound(state, round) {
     return Object.assign({}, state, {
