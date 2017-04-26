@@ -101,6 +101,7 @@ function updateRoundState(state, roundState) {
     round.remaining = roundState.remaining;
     round.phase = roundState.phase;
     round.playerInput = roundState.playerInput || defaultState.playerInput;
+    round.correct = roundState.hasOwnProperty('solved') ? roundState.solved : defaultState.correct;
 
     if (roundState.puzzle) {
         round.name = roundState.puzzle.name || defaultState.name;
