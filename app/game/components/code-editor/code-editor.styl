@@ -1,10 +1,23 @@
 @import '~common/styles/code-colors.styl'
 
 .code-editor
-    padding 5px
+    display flex
+    flex-flow column nowrap
     background theme-background
     border-radius 3px
     overflow hidden
+
+    .CodeMirror
+        padding 0 5px
+
+    .hint
+        color atom
+        padding 4px 5px
+        background selection
+        &.start
+            align-self flex-start
+        &.end
+            align-self flex-end
 
 .code-editor.readonly
     background readonly
