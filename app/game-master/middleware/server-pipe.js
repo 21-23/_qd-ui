@@ -41,7 +41,7 @@ function formatStateMessage(message) {
             players,
         },
         session: {
-            currentRoundIndex: puzzleIndex,
+            currentRoundIndex: Number.isFinite(puzzleIndex) ? puzzleIndex : -1,
             puzzleCount,
         }
     };
