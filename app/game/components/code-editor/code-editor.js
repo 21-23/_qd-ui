@@ -3,11 +3,13 @@ import CodeMirror from 'codemirror';
 import { isNewLineEvent, isValidSymbol } from './helpers';
 import config from '../../config.json';
 
-//imports specific language mode for codeEditor
+// imports specific language mode for codeEditor
 import 'codemirror/mode/javascript/javascript';
-//imports addons for hinting/autocomplete
+// imports addons for hinting/autocomplete
 import 'codemirror/addon/hint/javascript-hint';
 import 'codemirror/addon/hint/show-hint';
+// import addon for brackets auto-close
+import 'codemirror/addon/edit/closebrackets';
 
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/addon/hint/show-hint.css';
@@ -33,6 +35,7 @@ export default class CodeEditor extends Component {
             lint: true,
             indentUnit: 4,
             theme: 'lodash',
+            autoCloseBrackets: true,
         };
         const { config, playerInput, isReadOnly } = this.props;
         const selectedConfig = Object.assign({}, defaultConfig, config);
